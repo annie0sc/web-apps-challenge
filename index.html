@@ -24,7 +24,7 @@
   <link href="index.css" rel="stylesheet">
 
   <!-- Vue component styles -->
-  <link href="components/function/function.css" rel="stylesheet">
+  <link href="function/function.css" rel="stylesheet">
  
 
 </head>
@@ -36,12 +36,7 @@
 
       <article id="multiplier" class="col-md-3 ">
         <h2>Given countOfCourses and avgStudentsPerCourse, calculate total number of students</h2>
-        input 1 type - number
-        input 1 - countOfCourses
-        input 2 type - number
-        Input 2 - avgStudentsPerCourse
-
-        function: countOfCourses * avgStudentsPerCourse
+        
         <fieldset class="mt-2">
           <label for="countOfCourses">Enter count of courses:</label>
           <input v-model="countOfCourses" id="countOfCourses" type="number" min="0" max="100">
