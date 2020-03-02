@@ -3,65 +3,90 @@
 
 <head>
 
-  <title>Colors</title>
-
-  <!-- Grab some style from https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Chandolu-Vue.js App</title>
 
-  <link rel="stylesheet" href="./main.css">
+  <meta name="description"
+    content="Client-side app showing two-way data binding with Vue.js - no build tools required.">
+
+  <!-- get current Bootstrap Material Design styles from https://mdbootstrap.com/md-bootstrap-cdn/ -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+
+  <!-- A bit of CSS required for sticky footer -->
+  <link href="index.css" rel="stylesheet">
+
+  <!-- Vue component styles -->
+  <link href="function/function.css" rel="stylesheet">
+ 
 
 </head>
 
-<body>
+<body class="d-flex flex-column sticky-footer-wrapper">
+  <main class="container-fluid  flex-fill">
 
-  <main class="container mt-3">
-    <article class="row text-center">
+    <div class="row">
 
-      <section class="col-sm-4">
-        <h1>Change Color</h1>
-        <h4 = name1>Annie Chandolu</h4>
-      </section>
-
-      <section class="col-sm-4">
-        Given countOfCourses and avgStudentsPerCourse, calculate total number of students
-        input 1 type - number
-        input 1 - countOfCourses
-        input 2 type - number
-        Input 2 - avgStudentsPerCourse
-        
-        function: countOfCourses * avgStudentsPerCourse
-        <fieldset>
-          <label for="countOfCourses">Enter the count of courses taken by the students:</label>
-          <input id="countOfCourses" type="number" min = "0">
+      <article id="multiplier" class="col-md-3 ">
+        <h2>Given countOfCourses and avgStudentsPerCourse, calculate total number of students</h2>
+        <fieldset class="mt-2">
+          <label for="countOfCourses">Enter count of courses:</label>
+          <input v-model="countOfCourses" id="countOfCourses" type="number" min="0" max="100">
+          <span id="firstWarning" class="text-danger"></span>
         </fieldset>
 
-        <fieldset>
-          <label for="avgStudentsPerCourse">Enter the average number of students per course:</label>
-          <input id="avgStudentsPerCourse" type="number" min="0">
+        <fieldset class="mt-2">
+          <label for="avgStudentsPerCourse">Enter the average of students per course:</label>
+          <input v-model="avgStudentsPerCourse" id="avgStudentsPerCourse" type="number" min="0" max="100">
+          <span id="secondWarning" class="text-danger"></span>
         </fieldset>
 
-      </section>
-
-      <section class="col-sm-4">
-        <canvas id="canvas" width="100" height="100" style="border:1px solid #000000;"></canvas>
-      </section>
-
-    </article>
+        <h3 class="mt-2">{{result}}</h3>
+      </article>
+    </div>
 
   </main>
 
-  <footer class="container mt-3 text-center ">
-    <a>Annie Samarpitha Chandolu</a>
-   
+  <!-- sticky footer with padding on y-axis (top and bottom) -->
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Right-click / Inspect / Console</span>
+      &#9670;
+      <a href="https://denisecase.github.io/js-gui-vue/">Demo</a>
+      &#9670;
+      <a href="https://github.com/denisecase/js-gui-vue">Source</a>
+    </div>
   </footer>
 
-  <script src="main.js"></script>
 
+
+  <!-- get current Bootstrap Material Design styles from https://mdbootstrap.com/md-bootstrap-cdn/ -->
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+
+  <!-- Vue.js must be added before our custom code from https://cdnjs.com/libraries/vue -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+
+  <!-- Vue components -->
+
+  <script src="function/function.js"></script>
+ 
 </body>
 
 </html>
